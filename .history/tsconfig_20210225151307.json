@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "types": ["vite-svg-loader", "vite/client"],
+    "baseUrl": "src/",
+    "paths": {
+      "@src/*": ["*"],
+      "@img/*": ["assets/image/*"],
+      "@views/*": ["views/*"],
+      "@com/*": ["components/*"],
+      "@order/*": ["order/*"],
+      "@entity/*": ["entity/*"],
+      "@router": ["router/*", "router/index"],
+      "@util/*": ["util/*"],
+      "@api/*": ["api/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["dist", "node_modules"]
+}

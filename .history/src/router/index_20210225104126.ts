@@ -1,0 +1,18 @@
+// import {
+//   createRouter,
+//   createWebHistory,
+// } from 'vue-router';
+
+// const routerHistory = createWebHistory()
+// const router = createRouter({
+//   history: ,
+//   routes: [
+//     //...
+//   ],
+// });
+// routerHistory.listen((to, from, info) => {
+//   console.log(`${dirLog[info.direction]} as a ${info.type}`)
+// })
+interface aa {
+  a: string;
+}
