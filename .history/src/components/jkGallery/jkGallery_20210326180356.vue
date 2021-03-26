@@ -9,7 +9,7 @@ export default defineComponent({
   name: "jkGallery",
   setup() {
     const jkGallery = ref(null);
-    const acceptValue = (value: string) => console.log(123);
+
     onMounted(() => {
       console.log(jkGallery.value);
       const jkGalleryRef = document.querySelector(".jkGallery");
@@ -18,7 +18,6 @@ export default defineComponent({
     });
     return {
       jkGallery,
-      acceptValue,
     };
   },
 });

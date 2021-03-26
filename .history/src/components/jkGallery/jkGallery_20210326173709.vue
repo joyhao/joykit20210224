@@ -8,17 +8,18 @@ import { Gallery } from "./ts/gallery";
 export default defineComponent({
   name: "jkGallery",
   setup() {
-    const jkGallery = ref(null);
-    const acceptValue = (value: string) => console.log(123);
-    onMounted(() => {
-      console.log(jkGallery.value);
-      const jkGalleryRef = document.querySelector(".jkGallery");
-      if (!jkGalleryRef) return;
-      const gallery = new Gallery(jkGalleryRef);
+    const jkGalleryRef = ref(null);
+
+    const gallery = new Gallery(".jkGallery");
+    watchEffect(() => {
+      // 这个副作用在 DOM 更新之前运行，因此，模板引用还没有持有对元素的引用。
+      console.log(jkGalleryRef.value); // => null
     });
+
+    console.log(gallery);
+
     return {
-      jkGallery,
-      acceptValue,
+      jkGalleryRef,
     };
   },
 });

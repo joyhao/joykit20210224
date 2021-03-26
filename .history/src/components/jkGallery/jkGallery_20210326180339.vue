@@ -1,5 +1,5 @@
 <template>
-  <section class="jkGallery" ref="jkGallery"></section>
+  <section class="jkGallery"></section>
 </template>
 
 <script lang="ts">
@@ -8,18 +8,12 @@ import { Gallery } from "./ts/gallery";
 export default defineComponent({
   name: "jkGallery",
   setup() {
-    const jkGallery = ref(null);
-    const acceptValue = (value: string) => console.log(123);
     onMounted(() => {
-      console.log(jkGallery.value);
       const jkGalleryRef = document.querySelector(".jkGallery");
       if (!jkGalleryRef) return;
       const gallery = new Gallery(jkGalleryRef);
     });
-    return {
-      jkGallery,
-      acceptValue,
-    };
+    return {};
   },
 });
 </script>

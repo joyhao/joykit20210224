@@ -1,6 +1,6 @@
 <template>
-  <article class="home" ref="homeRef">
-    <jkGallery ref="jkGalleryRef" />
+  <article class="home" ref="home">
+    <jkGallery />
   </article>
 </template>
 
@@ -11,22 +11,15 @@ import {
   ref,
   onMounted,
   watchEffect,
-  nextTick,
 } from "vue";
 
 export default defineComponent({
   name: "Home",
   setup() {
     const homeRef = ref(null);
-    onMounted(() => {
+    watchEffect(() => {
       console.log(homeRef.value);
-      const jkGalleryRef = ref(null);
-
-      nextTick(() => {
-        console.log(jkGalleryRef.value?.acceptValue);
-      });
     });
-    return { homeRef };
   },
   components: {
     jkGallery: defineAsyncComponent(

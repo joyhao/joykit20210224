@@ -18,15 +18,14 @@ export default defineComponent({
   name: "Home",
   setup() {
     const homeRef = ref(null);
+    const jkGallery = ref(null);
     onMounted(() => {
       console.log(homeRef.value);
-      const jkGalleryRef = ref(null);
-
       nextTick(() => {
-        console.log(jkGalleryRef.value?.acceptValue);
+        console.log(jkGallery.value);
       });
     });
-    return { homeRef };
+    return { homeRef, jkGallery };
   },
   components: {
     jkGallery: defineAsyncComponent(

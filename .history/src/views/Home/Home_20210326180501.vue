@@ -20,10 +20,11 @@ export default defineComponent({
     const homeRef = ref(null);
     onMounted(() => {
       console.log(homeRef.value);
-      const jkGalleryRef = ref(null);
 
       nextTick(() => {
-        console.log(jkGalleryRef.value?.acceptValue);
+        const jkGalleryRef = ref(null);
+
+        console.log(jkGalleryRef.value?.jkGallery);
       });
     });
     return { homeRef };

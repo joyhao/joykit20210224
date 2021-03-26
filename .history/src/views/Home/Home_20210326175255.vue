@@ -1,6 +1,6 @@
 <template>
-  <article class="home" ref="homeRef">
-    <jkGallery ref="jkGalleryRef" />
+  <article class="home">
+    <jkGallery ref="jkGallery" />
   </article>
 </template>
 
@@ -17,16 +17,14 @@ import {
 export default defineComponent({
   name: "Home",
   setup() {
-    const homeRef = ref(null);
-    onMounted(() => {
-      console.log(homeRef.value);
-      const jkGalleryRef = ref(null);
-
-      nextTick(() => {
-        console.log(jkGalleryRef.value?.acceptValue);
-      });
-    });
-    return { homeRef };
+    const jkGallery = ref(null);
+    onMounted,
+      () => {
+        nextTick(() => {
+          console.log(jkGallery.value);
+        });
+      };
+    return { jkGallery };
   },
   components: {
     jkGallery: defineAsyncComponent(

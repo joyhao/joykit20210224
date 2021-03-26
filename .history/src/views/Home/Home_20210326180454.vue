@@ -23,7 +23,7 @@ export default defineComponent({
       const jkGalleryRef = ref(null);
 
       nextTick(() => {
-        console.log(jkGalleryRef.value?.acceptValue);
+        console.log(jkGalleryRef.value?.jkGallery);
       });
     });
     return { homeRef };

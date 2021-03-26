@@ -1,18 +1,11 @@
 <template>
-  <article class="home" ref="homeRef">
-    <jkGallery ref="jkGalleryRef" />
+  <article class="home" ref="home">
+    <jkGallery />
   </article>
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  defineAsyncComponent,
-  ref,
-  onMounted,
-  watchEffect,
-  nextTick,
-} from "vue";
+import { defineComponent, defineAsyncComponent, ref, onMounted } from "vue";
 
 export default defineComponent({
   name: "Home",
@@ -20,13 +13,7 @@ export default defineComponent({
     const homeRef = ref(null);
     onMounted(() => {
       console.log(homeRef.value);
-      const jkGalleryRef = ref(null);
-
-      nextTick(() => {
-        console.log(jkGalleryRef.value?.acceptValue);
-      });
     });
-    return { homeRef };
   },
   components: {
     jkGallery: defineAsyncComponent(
